@@ -1,4 +1,6 @@
 <p>product-list works!</p>
-<div *ngFor="let product of products">
-    <p>{{product.name}}</p>
+<div class="product-list-container">
+    <div class="product-list-block" *ngFor="let product of products">
+        <app-product-item [productUrl]="product.url" [productName]="product.name" [productPrice]="product.price"></app-product-item>
+    </div>
 </div>

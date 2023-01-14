@@ -1,0 +1,13 @@
+.product-list-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    background-color: DodgerBlue;
+}
+
+.product-list-block{
+    background-color: #f1f1f1;
+    flex-flow: column;
+    margin: 10px;
+    width: 25%;
+}
