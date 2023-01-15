@@ -1,6 +1,6 @@
 <p>product-list works!</p>
 <div class="product-list-container">
     <div class="product-list-block" *ngFor="let product of products">
-        <app-product-item [productUrl]="product.url" [productName]="product.name" [productPrice]="product.price"></app-product-item>
+        <app-product-item [productId]="product.id" [productUrl]="product.url" [productName]="product.name" [productPrice]="product.price"></app-product-item>
     </div>
 </div>

@@ -1,7 +1,9 @@
 <div class = "product-item-block">
     <div>
-        <img src="{{productUrl}}" width="100%">
+        <a routerLink="item-detail/{{productId}}">
+            <img src="{{productUrl}}" width="100%">
+        </a>
     </div>
-    <div>{{productName}}</div>
+    <div><a routerLink="item-detail/{{productId}}">{{productName}}</a></div>
     <div>$ {{productPrice}}</div>
 </div>
