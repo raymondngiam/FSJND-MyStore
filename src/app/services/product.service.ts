@@ -10,7 +10,7 @@ import { Product } from '../models/product';
 export class ProductService {
   constructor(private http: HttpClient) {}
 
-  getProduct(): Observable<Product[]> {
+  getProductList(): Observable<Product[]> {
     return this.http.get<Product[]>('http://localhost:4200/assets/data.json');
   }
 }

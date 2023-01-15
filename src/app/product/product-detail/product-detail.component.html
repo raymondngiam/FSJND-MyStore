@@ -1,0 +1,11 @@
+<div *ngIf="product; else invalidProductId" class="horizontalPane">
+    <div class="verticalPane">
+        <img src="{{product.url}}" width="100%">
+    </div> 
+    <div class="verticalPane">
+        <p><b>{{product.name}}</b></p>
+        <p>$ {{product.price}}</p>
+        <p>{{product.description}}</p>
+    </div>
+</div>
+<ng-template #invalidProductId>Invalid product id! Parsed id = {{id}}.</ng-template>   
