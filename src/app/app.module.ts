@@ -10,12 +10,17 @@ import { ProductListComponent } from './product/product-list/product-list.compon
 import { ProductItemComponent } from './product/product-item/product-item.component';
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 
+import { HeaderComponent } from './misc/header/header.component';
+import { NavbarComponent } from './misc/navbar/navbar.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     ProductListComponent,
     ProductItemComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    HeaderComponent,
+    NavbarComponent
   ],
   imports: [BrowserModule, CommonModule, AppRoutingModule, HttpClientModule],
   providers: [],
