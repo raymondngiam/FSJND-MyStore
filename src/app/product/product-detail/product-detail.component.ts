@@ -25,4 +25,10 @@ export class ProductDetailComponent implements OnInit {
       this.product = p.filter((item) => item.id == this.id)[0];
     });
   }
+
+  onSubmit(product: Product, event: any): void {
+    const qty = (event.target[0] as HTMLInputElement).value;
+    const message = `${product.name}: Qty = ${qty}`;
+    alert(message);
+  }
 }

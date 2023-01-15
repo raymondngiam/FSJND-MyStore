@@ -6,6 +6,16 @@
         <p><b>{{product.name}}</b></p>
         <p>$ {{product.price}}</p>
         <p>{{product.description}}</p>
+        <form (ngSubmit)="onSubmit(product, $event)" class="drop-down-container">
+            <select style="width: 100px;"  class="form-select" aria-label="Default select example">
+                <option selected value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <input type="submit" value="Add to Cart" class="btn btn-primary">
+        </form>
     </div>
 </div>
 <ng-template #invalidProductId>Invalid product id! Parsed id = {{id}}.</ng-template>   

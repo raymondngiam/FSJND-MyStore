@@ -15,3 +15,10 @@
     margin: 10px;
     background-color: #f1f1f1;
 }
+.drop-down-container {
+    display: flex;
+    flex-flow: row;
+    justify-content: center ;
+    align-items: center;
+    column-gap: 5px;
+}

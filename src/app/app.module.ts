@@ -13,6 +13,7 @@ import { ProductDetailComponent } from './product/product-detail/product-detail.
 import { HeaderComponent } from './misc/header/header.component';
 import { NavbarComponent } from './misc/navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HeaderComponent,
     NavbarComponent
   ],
-  imports: [BrowserModule, CommonModule, AppRoutingModule, HttpClientModule, NgbModule],
+  imports: [
+    BrowserModule,
+    CommonModule,
+    AppRoutingModule,
+    HttpClientModule,
+    NgbModule,
+    FormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
