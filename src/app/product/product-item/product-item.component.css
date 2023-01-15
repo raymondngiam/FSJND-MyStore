@@ -1,6 +1,9 @@
 .product-item-block {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
     margin: 10px;
     padding: 20px;
-    font-size: 30px;
-    text-align: center;
+    font-size: 20px;
 }
