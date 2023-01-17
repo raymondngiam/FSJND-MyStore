@@ -6,7 +6,7 @@
         <p><b>{{product.name}}</b></p>
         <p>$ {{product.price}}</p>
         <p>{{product.description}}</p>
-        <form (ngSubmit)="onSubmit(product, $event)" class="drop-down-container">
+        <form (ngSubmit)="onSubmit(product, $event.target[0])" class="drop-down-container">
             <select style="width: 100px;"  class="form-select" aria-label="Default select example">
                 <option selected value="1">1</option>
                 <option value="2">2</option>

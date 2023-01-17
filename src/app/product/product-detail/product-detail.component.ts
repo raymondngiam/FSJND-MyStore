@@ -26,8 +26,8 @@ export class ProductDetailComponent implements OnInit {
     });
   }
 
-  onSubmit(product: Product, event: any): void {
-    const qty = (event.target[0] as HTMLInputElement).value;
+  onSubmit(product: Product, eventTarget: HTMLSelectElement): void {
+    const qty = eventTarget.value;
     const message = `${product.name}: Qty = ${qty}`;
     alert(message);
   }
