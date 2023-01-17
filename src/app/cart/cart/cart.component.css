@@ -1,0 +1,21 @@
+.back{
+    background-color: #18bfc5;
+    display: flex;
+    flex-flow: column;
+}
+
+.horizontal-container {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    background-color: #18bfc5;
+    min-height: 100vh;
+}
+
+.vertical-pane {
+    margin: 10px;
+    padding: 10px;
+    width: 30%;
+    text-align: center;
+    background-color: #f1f1f1;
+}
