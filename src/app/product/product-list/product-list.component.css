@@ -2,7 +2,7 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    background-color: DodgerBlue;
+    background-color: #18bfc5;
 }
 
 .product-list-block{

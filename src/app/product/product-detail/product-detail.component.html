@@ -3,9 +3,9 @@
         <img src="{{product.url}}" width="100%">
     </div> 
     <div class="verticalPane">
-        <p><b>{{product.name}}</b></p>
-        <p>$ {{product.price}}</p>
-        <p>{{product.description}}</p>
+        <div><b>{{product.name}}</b></div>
+        <div>$ {{product.price}}</div>
+        <div>{{product.description}}</div>
         <form (ngSubmit)="onSubmit(product, $event.target[0])" class="drop-down-container">
             <select style="width: 100px;"  class="form-select" aria-label="Default select example">
                 <option selected value="1">1</option>
@@ -16,6 +16,9 @@
             </select>
             <input type="submit" value="Add to Cart" class="btn btn-primary">
         </form>
+        <br>
+        <br>
+        <div><a routerLink="">&larr; Back to product list</a></div>
     </div>
 </div>
 <ng-template #invalidProductId>Invalid product id! Parsed id = {{id}}.</ng-template>   

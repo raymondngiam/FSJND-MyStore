@@ -3,5 +3,6 @@
     flex-flow: column;
     justify-content: space-between center;
     align-items: center;
-    background-color: rgb(24, 191, 197);
+    background-color: dodgerblue;
+    color: #FFFFFF
 }

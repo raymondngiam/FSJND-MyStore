@@ -2,13 +2,14 @@
     display: flex;
     flex-flow: row;
     justify-content: center;
-    background-color: DodgerBlue;
+    background-color: #18bfc5;
 }
 .verticalPane {
     display: flex;
     flex-flow: column;
     justify-content: center;
     align-items: center;
+    row-gap: 10px;    
     border-radius: 10px;
     width: 33%;
     max-width: 33%;
