@@ -1,6 +1,8 @@
 <div class="back">
     <div class="horizontal-container">
-        <div class="vertical-pane">items</div>
+        <div class="vertical-pane">items
+            <div *ngFor="let item of cartItems">{{item.productId}}, Qty={{item.quantity}}</div>
+        </div>
         <div class="vertical-pane">particulars</div>
     </div>
 </div>

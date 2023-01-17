@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/models/product';
 import { ProductService } from 'src/app/services/product.service';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -14,6 +15,7 @@ export class ProductDetailComponent implements OnInit {
 
   constructor(
     private productService: ProductService,
+    private cartService: CartService,
     private route: ActivatedRoute
   ) {}
 
@@ -27,8 +29,9 @@ export class ProductDetailComponent implements OnInit {
   }
 
   onSubmit(product: Product, eventTarget: HTMLSelectElement): void {
-    const qty = eventTarget.value;
+    const qty = parseInt(eventTarget.value);
     const message = `${product.name}: Qty = ${qty}`;
     alert(message);
+    this.cartService.addToCart(this.id, qty);
   }
 }

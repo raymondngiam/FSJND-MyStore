@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { ProductListComponent } from './product/product-list/product-list.component';
 import { ProductItemComponent } from './product/product-item/product-item.component';
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
+import { CartComponent } from './cart/cart/cart.component';
 
 import { HeaderComponent } from './misc/header/header.component';
 import { NavbarComponent } from './misc/navbar/navbar.component';
@@ -21,6 +22,7 @@ import { FormsModule } from '@angular/forms';
     ProductListComponent,
     ProductItemComponent,
     ProductDetailComponent,
+    CartComponent,
     HeaderComponent,
     NavbarComponent
   ],
