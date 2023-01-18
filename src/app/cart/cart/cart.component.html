@@ -1,7 +1,13 @@
 <div class="back">
     <div class="horizontal-container">
-        <div class="vertical-pane">items
-            <div *ngFor="let item of cartItems">{{item.productId}}, Qty={{item.quantity}}</div>
+        <div class="vertical-pane">
+            <div class="cart-items-header">
+                <div>Cart items:</div>
+                <button type="button" class="btn btn-primary btn-sm">Update Qty</button>
+            </div>
+            <div *ngFor="let item of cartItems">
+                <app-cart-item [productId]="item.productId" [quantity]="item.quantity"></app-cart-item>
+            </div>
         </div>
         <div class="vertical-pane">particulars</div>
     </div>

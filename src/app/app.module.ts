@@ -10,11 +10,13 @@ import { ProductListComponent } from './product/product-list/product-list.compon
 import { ProductItemComponent } from './product/product-item/product-item.component';
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 import { CartComponent } from './cart/cart/cart.component';
+import { CartItemComponent } from './cart/cart-item/cart-item.component';
 
 import { HeaderComponent } from './misc/header/header.component';
 import { NavbarComponent } from './misc/navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { FormsModule } from '@angular/forms';
     ProductItemComponent,
     ProductDetailComponent,
     CartComponent,
+    CartItemComponent,
     HeaderComponent,
     NavbarComponent
   ],
@@ -32,7 +35,8 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

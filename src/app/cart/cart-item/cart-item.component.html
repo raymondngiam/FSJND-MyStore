@@ -1,0 +1,18 @@
+<div class="HorizontalContainer">
+    <div class="VerticalPane">
+        <div class="CartItemImageContainer">
+            <img src="{{productUrl}}" height="100%">
+        </div>
+        <div class="ItemDetailRows">
+            <div><b>{{name}}</b></div>
+            <div>$ {{price}}</div>
+            <div class="QtyRow">
+                <div>Quantity:</div>
+                <input value="{{quantity}}" size="3"/> 
+                <fa-icon [icon]="trashIcon"></fa-icon>
+            </div>
+        </div>
+    </div>
+</div>
+
+
