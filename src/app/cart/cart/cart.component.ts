@@ -15,4 +15,14 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
     this.cartItems = this.cartService.getCartItems();
   }
+
+  onUpdateQty() {
+    this.cartService.updateCartItems(this.cartItems);
+    alert(`Quantity updated.`);
+  }
+
+  deleteCartItem(productId: number) {
+    this.cartService.deleteCartItem(productId);
+    this.cartItems = this.cartService.getCartItems();
+  }
 }

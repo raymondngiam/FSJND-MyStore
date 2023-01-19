@@ -34,4 +34,15 @@ export class CartService {
     const cartItems = this.myStorage.getItem('cart');
     return cartItems ? JSON.parse(cartItems) : [];
   }
+
+  deleteCartItem(productId: number): void {
+    const cartItems: CartItem[] = this.getCartItems();
+    const removeIndex = cartItems.findIndex((t) => t.productId == productId);
+    cartItems.splice(removeIndex, 1);
+    this.myStorage.setItem('cart', JSON.stringify(cartItems));
+  }
+
+  updateCartItems(cartItems: CartItem[]): void {
+    this.myStorage.setItem('cart', JSON.stringify(cartItems));
+  }
 }

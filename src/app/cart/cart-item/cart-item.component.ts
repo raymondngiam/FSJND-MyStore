@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { CartItem } from 'src/app/models/cart-item';
 
 @Component({
   selector: 'app-cart-item',
@@ -8,8 +9,11 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./cart-item.component.css']
 })
 export class CartItemComponent implements OnInit {
-  @Input() productId = 0;
-  @Input() quantity = 0;
+  @Input() cartItem: CartItem = {
+    productId: 0,
+    quantity: 0
+  };
+  @Output() deleteEvent = new EventEmitter<number>();
   productUrl = '';
   price = 0;
   name = '';
@@ -19,10 +23,16 @@ export class CartItemComponent implements OnInit {
 
   ngOnInit(): void {
     this.productService.getProductList().subscribe((products) => {
-      const product = products.filter((p) => p.id == this.productId)[0];
+      const product = products.filter(
+        (p) => p.id == this.cartItem.productId
+      )[0];
       this.name = product.name;
       this.price = product.price;
       this.productUrl = product.url;
     });
+  }
+
+  onDelete() {
+    this.deleteEvent.emit(this.cartItem.productId);
   }
 }

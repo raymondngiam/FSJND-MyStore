@@ -30,7 +30,7 @@ export class ProductDetailComponent implements OnInit {
 
   onSubmit(product: Product, eventTarget: HTMLSelectElement): void {
     const qty = parseInt(eventTarget.value);
-    const message = `${product.name}: Qty = ${qty}`;
+    const message = `${qty} ${product.name} added to cart.`;
     alert(message);
     this.cartService.addToCart(this.id, qty);
   }
