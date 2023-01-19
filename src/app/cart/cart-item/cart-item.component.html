@@ -1,14 +1,14 @@
 <div class="HorizontalContainer">
     <div class="VerticalPane">
         <div class="CartItemImageContainer">
-            <img src="{{productUrl}}" height="100%">
+            <img src="{{productUrl}}" width="50%">
         </div>
         <div class="ItemDetailRows">
             <div><b>{{name}}</b></div>
             <div>$ {{price}}</div>
             <div class="QtyRow">
                 <div>Quantity:</div>
-                <input [(ngModel)]="cartItem.quantity" size="3"/> 
+                <input [(ngModel)]="cartItem.quantity" size="1"> 
                 <div (click)="onDelete()"><fa-icon [icon]="trashIcon"></fa-icon></div>
             </div>
         </div>

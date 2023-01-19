@@ -2,6 +2,7 @@
     background-color: #18bfc5;
     display: flex;
     flex-flow: column;
+    min-width: 80em;
 }
 
 .horizontal-container {

@@ -4,5 +4,6 @@
     justify-content: space-between center;
     align-items: center;
     background-color: dodgerblue;
-    color: #FFFFFF
+    color: #FFFFFF;
+    min-width: 80em;
 }
