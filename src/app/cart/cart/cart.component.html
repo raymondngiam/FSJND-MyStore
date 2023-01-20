@@ -6,6 +6,7 @@
                 <input type="submit" class="btn btn-primary btn-sm" value="Update Qty" [disabled]="form.invalid">
             </div>
             <app-cart-item [cartItem]="item" (deleteEvent)="deleteCartItem($event)" *ngFor="let item of cartItems"></app-cart-item>
+            <div><b>Total: $ {{totalPrice | number: '1.1-2'}}</b></div>
         </form>
         <div class="vertical-pane">particulars</div>
     </div>
