@@ -1,14 +1,12 @@
 <div class="back">
     <div class="horizontal-container">
-        <div class="vertical-pane">
+        <form #form="ngForm" class="vertical-pane" (ngSubmit)="onUpdateQty()">
             <div class="cart-items-header">
                 <div>Cart items:</div>
-                <button type="button" class="btn btn-primary btn-sm" (click)="onUpdateQty()">Update Qty</button>
+                <input type="submit" class="btn btn-primary btn-sm" value="Update Qty" [disabled]="form.invalid">
             </div>
-            <div *ngFor="let item of cartItems">
-                <app-cart-item [cartItem]="item" (deleteEvent)="deleteCartItem($event)"></app-cart-item>
-            </div>
-        </div>
+            <app-cart-item [cartItem]="item" (deleteEvent)="deleteCartItem($event)" *ngFor="let item of cartItems"></app-cart-item>
+        </form>
         <div class="vertical-pane">particulars</div>
     </div>
 </div>

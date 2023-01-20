@@ -2,11 +2,13 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { CartItem } from 'src/app/models/cart-item';
+import { ControlContainer, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-cart-item',
   templateUrl: './cart-item.component.html',
-  styleUrls: ['./cart-item.component.css']
+  styleUrls: ['./cart-item.component.css'],
+  viewProviders: [{ provide: ControlContainer, useExisting: NgForm }]
 })
 export class CartItemComponent implements OnInit {
   @Input() cartItem: CartItem = {

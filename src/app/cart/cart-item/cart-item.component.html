@@ -8,7 +8,13 @@
             <div>$ {{price}}</div>
             <div class="QtyRow">
                 <div>Quantity:</div>
-                <input [(ngModel)]="cartItem.quantity" size="1"> 
+                <!-- Remark: The following is a nested ng form validation input element:
+                    1) its `name` attribute has to be unique,
+                    2) its `.ts` file must have 
+                         `viewProviders: [{ provide: ControlContainer, useExisting: NgForm }]`
+                       declaration in the @component decorator
+                -->
+                <input name="{{cartItem.productId}}" required pattern="^[0-9]*" [(ngModel)]="cartItem.quantity" size="1"> 
                 <div (click)="onDelete()"><fa-icon [icon]="trashIcon"></fa-icon></div>
             </div>
         </div>
