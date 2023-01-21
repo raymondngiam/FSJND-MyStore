@@ -13,6 +13,7 @@ export class CartComponent implements OnInit {
   cartItems: CartItem[] = [];
   products: Product[] = [];
   totalPrice = 0;
+  flag = true;
 
   constructor(
     private cartService: CartService,

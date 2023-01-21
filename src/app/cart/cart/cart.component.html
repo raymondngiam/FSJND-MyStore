@@ -1,12 +1,15 @@
 <div class="back">
     <div class="horizontal-container">
         <form #form="ngForm" class="vertical-pane" (ngSubmit)="onUpdateQty()">
-            <div class="cart-items-header">
-                <div>Cart items:</div>
-                <input type="submit" class="btn btn-primary btn-sm" value="Update Qty" [disabled]="form.invalid">
+            <div *ngIf="cartItems.length>0 ; else no_item">
+                <div class="cart-items-header">
+                    <div>Cart items:</div>
+                    <input type="submit" class="btn btn-primary btn-sm" value="Update Qty" [disabled]="form.invalid">
+                </div>
+                <app-cart-item [cartItem]="item" (deleteEvent)="deleteCartItem($event)" *ngFor="let item of cartItems"></app-cart-item>
+                <div><b>Total: $ {{totalPrice | number: '1.1-2'}}</b></div>
             </div>
-            <app-cart-item [cartItem]="item" (deleteEvent)="deleteCartItem($event)" *ngFor="let item of cartItems"></app-cart-item>
-            <div><b>Total: $ {{totalPrice | number: '1.1-2'}}</b></div>
+            <ng-template #no_item>No item in cart.</ng-template>
         </form>
         <div class="vertical-pane">
             <app-check-out-form></app-check-out-form>

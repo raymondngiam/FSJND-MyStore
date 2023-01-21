@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-check-out-form',
@@ -10,7 +11,22 @@ export class CheckOutFormComponent {
   address = '';
   creditCardNumber = '';
 
+  constructor(private cartService: CartService) {}
+
+  checkCartNotEmpty(): boolean {
+    const cartItems = this.cartService.getCartItems();
+    if (cartItems.length != 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   onCheckOut(): void {
-    alert(`clicked! creditcard: ${this.creditCardNumber}`);
+    if (this.checkCartNotEmpty()) {
+      alert(`clicked! creditcard: ${this.creditCardNumber}`);
+    } else {
+      alert(`cart is empty`);
+    }
   }
 }
