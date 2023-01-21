@@ -10,7 +10,9 @@
     display: flex;
     flex-flow: row;
     justify-content: center;
-    background-color: blueviolet;
+    background-color:honeydew;
+    border-style: solid;
+    border-color: gray;
     border-radius: 10px;
 }
 
@@ -25,8 +27,8 @@
     flex-flow: column;
     justify-content: space-evenly;
     align-items: flex-start;
+    background-color: honeydew;
     width: 50em;
-    background-color: blueviolet;
     border-radius: 10px;
 }
 
