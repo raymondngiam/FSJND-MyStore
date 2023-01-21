@@ -12,7 +12,7 @@ import { ProductDetailComponent } from './product/product-detail/product-detail.
 import { CartComponent } from './cart/cart/cart.component';
 import { CartItemComponent } from './cart/cart-item/cart-item.component';
 import { CheckOutFormComponent } from './cart/check-out-form/check-out-form.component';
-
+import { OrderCompletedComponent } from './cart/order-completed/order-completed.component';
 import { HeaderComponent } from './misc/header/header.component';
 import { NavbarComponent } from './misc/navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -28,6 +28,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     CartComponent,
     CartItemComponent,
     CheckOutFormComponent,
+    OrderCompletedComponent,
     HeaderComponent,
     NavbarComponent
   ],

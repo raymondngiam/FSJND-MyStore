@@ -1,0 +1,18 @@
+.vertical-container {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    row-gap: 10px;
+}
+
+.confirmation-header {
+    color:dodgerblue;
+    font-size: 35px;
+}
+
+.confirmation-item {
+    color: black;
+    font-size: 21px;
+}
