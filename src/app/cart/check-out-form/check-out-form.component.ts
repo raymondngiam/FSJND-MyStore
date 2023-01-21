@@ -46,6 +46,7 @@ export class CheckOutFormComponent implements OnInit {
         totalPrice += price * item.quantity;
       }
       this.router.navigateByUrl(`success/${this.fullName}/${totalPrice}`);
+      this.cartService.deleteAll();
     } else {
       alert(`cart is empty`);
     }

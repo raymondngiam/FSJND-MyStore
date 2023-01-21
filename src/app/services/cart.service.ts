@@ -45,4 +45,8 @@ export class CartService {
   updateCartItems(cartItems: CartItem[]): void {
     this.myStorage.setItem('cart', JSON.stringify(cartItems));
   }
+
+  deleteAll(): void {
+    this.myStorage.setItem('cart', JSON.stringify([]));
+  }
 }
