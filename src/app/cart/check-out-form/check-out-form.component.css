@@ -1,0 +1,33 @@
+.main-vertical-container {
+    display: flex;
+    flex-flow: column;
+    align-content: center;
+    row-gap: 10px;
+}
+
+.horizontal-container {
+    display: flex;
+    flex-flow: row;
+    column-gap: 10px;
+}
+
+.vertical-container {
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    row-gap: 3px;
+}
+.vertical-container-label {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.submit-button {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+}

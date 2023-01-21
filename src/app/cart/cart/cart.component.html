@@ -8,6 +8,8 @@
             <app-cart-item [cartItem]="item" (deleteEvent)="deleteCartItem($event)" *ngFor="let item of cartItems"></app-cart-item>
             <div><b>Total: $ {{totalPrice | number: '1.1-2'}}</b></div>
         </form>
-        <div class="vertical-pane">particulars</div>
+        <div class="vertical-pane">
+            <app-check-out-form></app-check-out-form>
+        </div>
     </div>
 </div>

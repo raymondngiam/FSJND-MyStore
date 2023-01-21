@@ -11,6 +11,7 @@ import { ProductItemComponent } from './product/product-item/product-item.compon
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 import { CartComponent } from './cart/cart/cart.component';
 import { CartItemComponent } from './cart/cart-item/cart-item.component';
+import { CheckOutFormComponent } from './cart/check-out-form/check-out-form.component';
 
 import { HeaderComponent } from './misc/header/header.component';
 import { NavbarComponent } from './misc/navbar/navbar.component';
@@ -26,6 +27,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ProductDetailComponent,
     CartComponent,
     CartItemComponent,
+    CheckOutFormComponent,
     HeaderComponent,
     NavbarComponent
   ],

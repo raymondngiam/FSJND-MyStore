@@ -1,0 +1,17 @@
+<form #form="ngForm" (ngSubmit)="onCheckOut()" class="main-vertical-container">
+    <div class="horizontal-container">
+        <div class="vertical-container-label">
+            <span>Full name:</span>
+            <span>Address:</span>
+            <span>Credit card number:</span>
+        </div>
+        <div class="vertical-container">
+            <div><input name="full-name-input" required minlength="10" pattern="[a-zA-Z ]*" [(ngModel)]="fullName" width="50em"></div>
+            <div><input name="address-input" required minlength="10" [(ngModel)]="address" width="50em"></div>
+            <div><input name="credit-card-input" required pattern="^[0-9]{16}" [(ngModel)]="creditCardNumber" width="50em"></div>
+        </div>    
+    </div>
+    <div class="submit-button">
+        <input name="submit" value="Place order" type="submit" class="btn btn-primary btn-sm" [disabled]="form.invalid" size="5">
+    </div>
+</form>
