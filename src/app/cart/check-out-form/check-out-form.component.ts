@@ -3,6 +3,10 @@ import { Router } from '@angular/router';
 import { Product } from 'src/app/models/product';
 import { CartService } from 'src/app/services/cart.service';
 import { ProductService } from 'src/app/services/product.service';
+import {
+  faExclamationTriangle,
+  faCheck
+} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-check-out-form',
@@ -14,6 +18,8 @@ export class CheckOutFormComponent implements OnInit {
   address = '';
   creditCardNumber = '';
   products: Product[] = [];
+  alertIcon = faExclamationTriangle;
+  checkIcon = faCheck;
 
   constructor(
     private cartService: CartService,

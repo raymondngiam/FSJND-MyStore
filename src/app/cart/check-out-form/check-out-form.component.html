@@ -6,9 +6,21 @@
             <span>Credit card number:</span>
         </div>
         <div class="vertical-container">
-            <div><input name="full-name-input" required minlength="10" pattern="[a-zA-Z ]*" placeholder="(minimum 10 characters)" [(ngModel)]="fullName" width="50em"></div>
-            <div><input name="address-input" required minlength="10" placeholder="(minimum 10 characters)" [(ngModel)]="address" width="50em"></div>
-            <div><input name="credit-card-input" required pattern="^[0-9]{16}" placeholder="(16-digit number)" [(ngModel)]="creditCardNumber" width="50em"></div>
+            <div class="horizontal-container">
+                <input name="full-name-input" required minlength="10" pattern="[a-zA-Z ]*" placeholder="(min 10 characters)" [(ngModel)]="fullName" #name="ngModel" size="11">
+                <div *ngIf="name.errors?.['required'] || name.errors?.['minlength'] || name.errors?.['pattern']; else pass_name"><fa-icon [icon]="alertIcon" style="color:red"></fa-icon> Min 10 characters</div>
+                <ng-template #pass_name><fa-icon [icon]="checkIcon" style="color:green"></fa-icon></ng-template>
+            </div>
+            <div class="horizontal-container">
+                <input name="address-input" required minlength="10" placeholder="(min 10 characters)" [(ngModel)]="address" #addr_input="ngModel" size="11">
+                <div *ngIf="addr_input.errors?.['required'] || addr_input.errors?.['minlength']; else pass_addr"><fa-icon [icon]="alertIcon" style="color:red"></fa-icon> Min 10 characters</div>
+                <ng-template #pass_addr><fa-icon [icon]="checkIcon" style="color:green"></fa-icon></ng-template>
+            </div>
+            <div class="horizontal-container">
+                <input name="credit-card-input" required pattern="^[0-9]{16}" placeholder="(16-digit number)" [ngModel]="creditCardNumber" (ngModelChange)="creditCardNumber = $event" #cc="ngModel" size="11">
+                <div *ngIf="cc.errors?.['required'] || cc.errors?.['minlength'] || cc.errors?.['pattern']; else pass_cc"><fa-icon [icon]="alertIcon" style="color:red"></fa-icon> 16-digit number</div>
+                <ng-template #pass_cc><fa-icon [icon]="checkIcon" style="color:green"></fa-icon></ng-template>
+            </div>
         </div>    
     </div>
     <div class="submit-button">
