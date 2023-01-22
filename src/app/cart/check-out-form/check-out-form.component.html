@@ -17,7 +17,7 @@
                 <ng-template #pass_addr><fa-icon [icon]="checkIcon" style="color:green"></fa-icon></ng-template>
             </div>
             <div class="horizontal-container">
-                <input name="credit-card-input" required pattern="^[0-9]{16}" placeholder="(16-digit number)" [ngModel]="creditCardNumber" (ngModelChange)="creditCardNumber = $event" #cc="ngModel" size="11">
+                <input name="credit-card-input" (keypress)="numberOnly($event)" required pattern="^[0-9]{16}" placeholder="(16-digit number)" [ngModel]="creditCardNumber" (ngModelChange)="creditCardNumber = $event" #cc="ngModel" size="11">
                 <div *ngIf="cc.errors?.['required'] || cc.errors?.['minlength'] || cc.errors?.['pattern']; else pass_cc"><fa-icon [icon]="alertIcon" style="color:red"></fa-icon> 16-digit number</div>
                 <ng-template #pass_cc><fa-icon [icon]="checkIcon" style="color:green"></fa-icon></ng-template>
             </div>

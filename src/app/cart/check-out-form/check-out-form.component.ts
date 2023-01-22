@@ -57,4 +57,11 @@ export class CheckOutFormComponent implements OnInit {
       alert(`cart is empty`);
     }
   }
+
+  numberOnly(event: KeyboardEvent): boolean {
+    if (event.key >= '0' && event.key <= '9') {
+      return true;
+    }
+    return false;
+  }
 }
