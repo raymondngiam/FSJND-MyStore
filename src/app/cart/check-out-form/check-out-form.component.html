@@ -8,8 +8,15 @@
         <div class="vertical-container">
             <div class="horizontal-container">
                 <input name="full-name-input" required minlength="10" pattern="[a-zA-Z ]*" placeholder="(min 10 characters)" [(ngModel)]="fullName" #name="ngModel" size="11">
-                <div *ngIf="name.errors?.['required'] || name.errors?.['minlength'] || name.errors?.['pattern']; else pass_name"><fa-icon [icon]="alertIcon" style="color:red"></fa-icon> Min 10 characters</div>
-                <ng-template #pass_name><fa-icon [icon]="checkIcon" style="color:green"></fa-icon></ng-template>
+                <div *ngIf="name.errors?.['required'] || name.errors?.['minlength']; else name_pass_length">
+                    <fa-icon [icon]="alertIcon" style="color:red"></fa-icon> Min 10 characters
+                </div>
+                <ng-template #name_pass_length>
+                    <div *ngIf="name.errors?.['pattern']; else name_pass_length_alphabet">
+                        <fa-icon [icon]="alertIcon" style="color:red"></fa-icon> Only accept alphabets
+                    </div>
+                </ng-template>
+                <ng-template #name_pass_length_alphabet><fa-icon [icon]="checkIcon" style="color:green"></fa-icon></ng-template>
             </div>
             <div class="horizontal-container">
                 <input name="address-input" required minlength="10" placeholder="(min 10 characters)" [(ngModel)]="address" #addr_input="ngModel" size="11">
